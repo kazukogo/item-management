@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '商品一覧')
+@section('title', '占い商品一覧')
 
 @section('content_header')
-    <h1>商品一覧</h1>
+    <h1>占い商品一覧</h1>
 @stop
 
 @section('content')
@@ -11,11 +11,11 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">商品一覧</h3>
+                    <h3 class="card-title">占い商品一覧</h3>
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
-                                <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
+                                <a href="{{ url('items/add') }}" class="btn btn-default">アニマルの登録</a>
                             </div>
                         </div>
                     </div>
@@ -28,6 +28,7 @@
                                 <th>名前</th>
                                 <th>種別</th>
                                 <th>詳細</th>
+                                <th> </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,6 +38,16 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->type }}</td>
                                     <td>{{ $item->detail }}</td>
+                                    <td>
+                                    <form action="/items/destroy/{{ $item->id }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+ 
+                            <button type="submit"  class="btn btn-danger">
+                                <i class="fa fa-btn fa-trash"></i>削除
+                            </button>
+                        </form></td>
+
                                 </tr>
                             @endforeach
                         </tbody>

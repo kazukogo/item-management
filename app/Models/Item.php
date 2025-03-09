@@ -33,4 +33,4 @@ class Item extends Model
      */
     protected $casts = [
     ];
-}
+  }

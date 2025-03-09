@@ -54,4 +54,16 @@ class ItemController extends Controller
 
         return view('item.add');
     }
+     /**
+        * タスク削除
+        *
+        * @param Request $request
+        * @param Task $task
+        * @return Response
+        */
+        public function destroy(Request $request, Item $item)
+        {
+            $item->delete();
+            return redirect('/items');
+        }
 }
