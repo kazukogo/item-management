@@ -16,7 +16,7 @@
 h1 {
   color: #B8860B(15, 13, 13, 0.88);/*文字色*/
   padding: 0.5em;/*文字周りの余白*/
-  display: inline-block;/*おまじない*/
+  display: inline-block;/*横並び*/
   line-height: 1.3;/*行高*/
   background-color: #ffffcc;
   background-image:
